@@ -2,7 +2,10 @@
 if __name__ == "__main__":
     import sys
     lenArgv = len(sys.argv) - 1
-    if lenArgv == 1:
+
+    if lenArgv == 0:
+        print("0 arguments.")
+    elif lenArgv == 1:
         print("1 argument:")
     else:
         print("{} arguments".format(lenArgv))
