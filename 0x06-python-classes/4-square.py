@@ -14,7 +14,6 @@ class Square:
             ValueError: if size is less than zero
         """
 
-
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -32,11 +31,11 @@ class Square:
     def size(self, value):
         """Sets size of square"""
 
-        if not isinstance(value, int):                            raise TypeError("size must be an integer")
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
 
     def area(self):
         """
