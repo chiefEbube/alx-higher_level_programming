@@ -1,53 +1,54 @@
 #!/usr/bin/python3
-"""Defines a square"""
+"""My square module"""
 
 
 class Square:
-    """Representation of a square"""
+    """defines a square"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initializing this square class
+        """Create a Square
         Args:
-            size: represents the size of the square defined
-        Raises:
-            TypeError: if size is not integer
-            ValueError: if size is less than zero
+            size: length of a side of Square
+            position: where the square is (coordinates)
         """
+        self.size = size
+        self.position = position
 
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-
-        self.__size = size
-        self.__position = position
+    def __str__(self):
+        self.my_print()
 
     @property
     def size(self):
-        """Retrieves size of square"""
-
+        """"The propery of size as the len of a side of Square
+        Raises:
+            TypeError: if size != int
+            ValueError: if size < 0
+        """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Sets size of square"""
-
         if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
+            raise TypeError('size must be an integer')
+        if value < 0:
+            raise ValueError('size must be >= 0')
         self.__size = value
 
     @property
     def position(self):
-        """Retrieves position"""
-
+        """property of the coordinates of this Square
+        Raises:
+            TypeError: if value != a tuple of 2 integers < 0
+        """
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Sets position of square"""
-
+        """set the position of this Square
+        Args: value as a tuple of two positive integers
+        Raises:
+            TypeError: if value is not a tuple or any int in tuple < 0
+        """
         if not isinstance(value, tuple):
             raise TypeError('position must be a tuple of 2 positive integers')
         if len(value) != 2:
