@@ -1,4 +1,5 @@
 #!/usr/bin/node
+<<<<<<< HEAD
 const fs = require('fs');
 
 const fileA = process.argv[2];
@@ -20,3 +21,9 @@ fileC !== undefined
   stream.write(fileBContent);
   stream.end();
 }
+=======
+
+class Rectangle {}
+
+module.exports = Rectangle;
+>>>>>>> 0d7f2a1c187bd617214533874e90de374d9b6a7f
